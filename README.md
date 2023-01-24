@@ -1,6 +1,6 @@
-  # rcedit-2022
+  # rcedit 2022
 
-  ###Why RC Edit 2022? 
+  ### Why RC Edit 2022? 
 
   This number stands for the reason, that in this repo, the famous `rcedit` were fully upgraded! 
   The whole project has been moved from old standards to the latest VisualStudio 2022 and .NET 7.0. 
