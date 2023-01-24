@@ -6,6 +6,8 @@
   The whole project has been moved from old standards to the latest VisualStudio 2022 and .NET 7.0. 
 
   Now you can build and edit it in VS2022 or modern .NET CLI if you want. 
+  
+  Original `rcedit` repository: https://github.com/electron/rcedit
 
   # rcedit [![Build status](https://ci.appveyor.com/api/projects/status/99eokln2emhidcej?svg=true)](https://ci.appveyor.com/project/zcbenz/rcedit/branch/master)
   Command line tool to edit resources of exe file on Windows.
