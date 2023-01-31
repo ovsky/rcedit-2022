@@ -1,6 +1,10 @@
-  # rcedit 2022
+# 📦 RCEdit'22 - Electron Source Editor 
 
-  ### Why RC Edit 2022? 
+![icon](https://i.postimg.cc/XvGmRwG8/icon-rcedit.png)
+
+---
+
+  ### Why RCEdit "2022"? 
 
   This number stands for the reason, that in this repo, the famous `rcedit` were fully upgraded! 
   The whole project has been moved from old standards to the latest VisualStudio 2022 and .NET 7.0. 
@@ -9,20 +13,20 @@
   
   Original `rcedit` repository: https://github.com/electron/rcedit
 
-  # rcedit [![Build status](https://ci.appveyor.com/api/projects/status/99eokln2emhidcej?svg=true)](https://ci.appveyor.com/project/zcbenz/rcedit/branch/master)
+  # 📦 RCEdit [![Build status](https://ci.appveyor.com/api/projects/status/99eokln2emhidcej?svg=true)](https://ci.appveyor.com/project/zcbenz/rcedit/branch/master)
   Command line tool to edit resources of exe file on Windows.
 
-  ## Executables
+  ## 🛠️ Executables:
 
   Prebuilt binaries can be found in the artifacts of appveyor jobs.
 
-  ## Building
+  ## 📘 Building:
 
   1. Clone the repository
   2. Open `rcedit.sln` with Visual Studio 2015 or above
   3. Build
 
-  ## Generate solution files
+  ## 📗 Generate solution files:
 
   If you have modified the gyp files, you should regenerate the solution files:
 
@@ -30,7 +34,7 @@
     https://chromium.googlesource.com/external/gyp
   2. Run `gyp rcedit.gyp --depth .`
 
-  ## Docs
+  ## 📝 Docs:
 
   Show help:
 
