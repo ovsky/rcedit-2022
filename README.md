@@ -1,107 +1,143 @@
-# 📦 RCEdit'22 - Electron Source Editor 
+# ![icon](https://i.postimg.cc/XvGmRwG8/icon-rcedit.png) RCEdit'22 - Electron Source Editor
 
-![icon](https://i.postimg.cc/XvGmRwG8/icon-rcedit.png)
+**A powerful command-line tool for editing Windows executable resources, modernized for 2022+**
+
+> ✨ Reimagined and rebuilt with **Visual Studio 2022** and **.NET 7.0** for today's standards
 
 ---
 
-  ### Why RCEdit "2022"? 
+## 🎯 What is RCEdit'22?
 
-  This number stands for the reason, that in this repo, the famous `rcedit` were fully upgraded! 
-  The whole project has been moved from old standards to the latest VisualStudio 2022 and .NET 7.0. 
+RCEdit'22 is a full modernization of the legendary `rcedit` tool, bringing this Windows resource editing powerhouse into the modern era. Whether you're developing Electron applications or working with Windows executables, RCEdit'22 provides a streamlined CLI for managing:
 
-  Now you can build and edit it in VS2022 or modern .NET CLI if you want. 
-  
-  Original `rcedit` repository: https://github.com/electron/rcedit
+- **🎨 Icons & Resources** - Update application icons and embedded resources
+- **📌 Version Information** - Control file and product version strings  
+- **🔐 Manifest Settings** - Manage execution levels and application manifests
+- **⚡ Everything at Once** - Batch modify multiple properties in a single command
 
-  # 📦 RCEdit [![Build status](https://ci.appveyor.com/api/projects/status/99eokln2emhidcej?svg=true)](https://ci.appveyor.com/project/zcbenz/rcedit/branch/master)
-  Command line tool to edit resources of exe file on Windows.
+### Why "2022"?
 
-  ## 🛠️ Executables:
+The original `rcedit` served the community well, but it was built on legacy standards. This modernized fork elevates the entire project to contemporary development practices:
 
-  Prebuilt binaries can be found in the artifacts of appveyor jobs.
+✅ Built with **Visual Studio 2022**  
+✅ Powered by **.NET 7.0**  
+✅ Full CLI compatibility maintained  
+✅ Ready for modern development workflows  
 
-  ## 📘 Building:
+---
 
-  1. Clone the repository
-  2. Open `rcedit.sln` with Visual Studio 2015 or above
-  3. Build
+## 🚀 Quick Start
 
-  ## 📗 Generate solution files:
+### Building the Project
 
-  If you have modified the gyp files, you should regenerate the solution files:
+```bash
+# Clone the repository
+git clone https://github.com/ovsky/rcedit-2022.git
+cd rcedit-2022
 
-  1. Make sure you have gyp configured on your system. If not, clone gyp from
-    https://chromium.googlesource.com/external/gyp
-  2. Run `gyp rcedit.gyp --depth .`
+# Open and build with Visual Studio 2022
+# OR use modern .NET CLI
+dotnet build rcedit.sln
+```
 
-  ## 📝 Docs:
+### Common Usage
 
-  Show help:
+**Set application icon:**
+```bash
+rcedit "app.exe" --set-icon "icon.ico"
+```
 
-  ```bash
-  $ rcedit -h
-  ```
+**Update version information:**
+```bash
+rcedit "app.exe" --set-file-version "1.0.0" --set-product-version "1.0.0"
+```
 
-  Set version string:
+**Modify version properties:**
+```bash
+rcedit "app.exe" --set-version-string "ProductName" "My Application"
+```
 
-  ```bash
-  $ rcedit "path-to-exe-or-dll" --set-version-string "Comments" "This is an exe"
-  ```
+**Get version information:**
+```bash
+rcedit "app.exe" --get-version-string "FileVersion"
+```
 
-  Use this option to change any supported properties, as described in the MSDN documentation [here](https://msdn.microsoft.com/en-us/library/windows/desktop/aa381058(v=vs.85).aspx)
+**Set execution level:**
+```bash
+rcedit "app.exe" --set-requested-execution-level "requireAdministrator"
+```
 
-  Set file version:
+**Apply manifest:**
+```bash
+rcedit "app.exe" --application-manifest "./manifest.xml"
+```
 
-  ```bash
-  $ rcedit "path-to-exe-or-dll" --set-file-version "10.7"
-  ```
+**Combine multiple operations:**
+```bash
+rcedit "app.exe" --set-icon "icon.ico" --set-file-version "2.0.0" --set-requested-execution-level "asInvoker"
+```
 
-  Set product version:
+---
 
-  ```bash
-  $ rcedit "path-to-exe-or-dll" --set-product-version "10.7"
-  ```
+## 📚 Documentation
 
-  Set icon:
+### Help Command
+```bash
+rcedit -h
+```
 
-  ```bash
-  $ rcedit "path-to-exe-or-dll" --set-icon "path-to-ico"
-  ```
+### Version String Properties
 
-  Set resource string:
+Any MSDN [Version String Resource](https://msdn.microsoft.com/en-us/library/windows/desktop/aa381058(v=vs.85).aspx) property is supported:
 
-  ```bash
-  $ rcedit "path-to-exe-or-dll" --set-resource-string id_number "new string value"
-  ```
+Common properties include: `Comments`, `CompanyName`, `FileDescription`, `FileVersion`, `InternalName`, `LegalCopyright`, `OriginalFilename`, `ProductName`, `ProductVersion`
 
-  Set [requested execution level](https://msdn.microsoft.com/en-us/library/6ad1fshk.aspx#Anchor_9) (`asInvoker` | `highestAvailable` | `requireAdministrator`) in the manifest:
+### Execution Levels
 
-  ```bash
-  $ rcedit "path-to-exe-or-dll" --set-requested-execution-level "requireAdministrator"
-  ```
+Set the [requested execution level](https://msdn.microsoft.com/en-us/library/6ad1fshk.aspx#Anchor_9) in the manifest:
 
-  Set [application manifest](https://msdn.microsoft.com/en-us/library/windows/desktop/aa374191.aspx):
+- `asInvoker` - Run with current user privileges
+- `highestAvailable` - Request highest available privileges  
+- `requireAdministrator` - Require administrator rights
 
-  ```bash
-  $ rcedit "path-to-exe-or-dll" --application-manifest ./path/to/manifest/file
-  ```
+---
 
-  And you can change multiple things in one command:
+## 📦 Downloads
 
-  ```bash
-  $ rcedit "path-to-exe-or-dll" --set-icon "path-to-ico" --set-file-version "10.7"
-  ```
+Prebuilt binaries are available in the **AppVeyor CI artifacts**. Check the [build status](https://ci.appveyor.com/project/zcbenz/rcedit/branch/master) for the latest releases.
 
-  Get version string:
+---
 
-  ```bash
-  $ rcedit "path-to-exe-or-dll" --get-version-string "property"
-  ```
+## 📋 Regenerating Solution Files
 
-  Use the same properties as `--set-version-string`. Use `"FileVersion"` to get the results of `--set-file-version` and `"ProductVersion"` to get the results of `--get-product-version`.
+If you've modified the GYP files, regenerate the solution:
 
-  Get resource string:
+```bash
+# 1. Ensure GYP is installed (clone from Chromium if needed)
+# https://chromium.googlesource.com/external/gyp
 
-  ```bash
-  $ rcedit "path-to-exe-or-dll" --get-resource-string id_number
-  ```
+# 2. Regenerate solution files
+gyp rcedit.gyp --depth .
+```
+
+---
+
+## 📖 Technology Stack
+
+![C++](https://img.shields.io/badge/C++-96.4%25-blue?style=flat-square&logo=cplusplus)
+![Python](https://img.shields.io/badge/Python-1.9%25-yellow?style=flat-square&logo=python)
+![C](https://img.shields.io/badge/C-1.7%25-gray?style=flat-square&logo=c)
+
+Built with modern tooling for **Visual Studio 2022** and **.NET 7.0+**
+
+---
+
+## 📜 License & Credits
+
+Original `rcedit` repository: https://github.com/electron/rcedit
+
+This modernized fork maintains compatibility while bringing the project to 2022+ standards.
+
+---
+
+**Made with ❤️ for modern Windows development**
