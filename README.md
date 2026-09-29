@@ -1,4 +1,5 @@
-# ![icon](https://i.postimg.cc/XvGmRwG8/icon-rcedit.png) RCEdit'22 - Electron Source Editor
+# ![icon](https://i.postimg.cc/XvGmRwG8/icon-rcedit.png)
+# RCEdit'22 - Electron Source Editor
 
 **A powerful command-line tool for editing Windows executable resources, modernized for 2022+**
 
@@ -8,7 +9,9 @@
 
 ## 🎯 What is RCEdit'22?
 
-RCEdit'22 is a full modernization of the legendary `rcedit` tool, bringing this Windows resource editing powerhouse into the modern era. Whether you're developing Electron applications or working with Windows executables, RCEdit'22 provides a streamlined CLI for managing:
+RCEdit'22 is a full modernization of the legendary `rcedit` tool, bringing this Windows resource editing powerhouse into the modern era. Whether you're developing Electron applications or working with Windows executables, RCEdit'22 provides a modern, reliable solution.
+
+### Key Features
 
 - **🎨 Icons & Resources** - Update application icons and embedded resources
 - **📌 Version Information** - Control file and product version strings  
